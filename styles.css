@@ -6,4 +6,225 @@
 }
 body{
     font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+.container.success .mainContent{
+    display: none;
+}
+.container.success .successContent{
+    display: flex;
+}
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
+}
+.image {
+    flex: 1;
+}
+.image, .image img {
+    width: 100%;
+}
+h1 {
+    font-size: clamp(2rem, 10vw, 3.2rem);
+    color: hsl(234, 29%, 20%);
+    font-weight: 700;
+}
+.contentDetails {
+    padding: 1.5rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: .5rem;
+    height: 100%;
+}
+.contentDetails p {
+    line-height: 1.55;
+    color: hsl(235, 18%, 26%);
+    font-weight: 400;
+}
+.detailsList{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    color: hsl(235, 18%, 26%);
+    margin: 1rem 0;
+}
+.detailsList li {
+    background-image: url(images/icon-list.svg);
+    background-repeat: no-repeat;
+    padding:0 0 1.2rem 2.5rem;
+}
+.label {
+    font-size: .8rem;
+    color: hsl(234, 29%, 20%);
+    font-weight: 700;
+}
+.errorMsg {
+    font-size: .8rem;
+    color: hsl(4, 100%, 67%);
+    font-weight: 400;
+    display: none;
+}
+form div {
+    display: flex;
+    justify-content: space-between;
+}
+form.error .contentEmail{
+    border: 1px solid  hsl(4, 100%, 67%);
+    background-color:  hsla(4, 100%, 67%, 0.2);
+    color:  hsl(4, 100%, 67%);
+}
+form.error .contentEmail::placeholder{
+    color:  hsl(4, 100%, 67%);
+}
+form.error .errorMsg{
+    display: block;
+}
+.contentEmail {
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid hsl(231, 7%, 60%);
+    border-radius: 10px;
+    margin: .3rem 0 1rem 0;
+    cursor: pointer;
+}
+.contentEmail:hover{
+    border: 1px inset hsl(231, 7%, 60%);
+}
+.contentEmail:focus{
+    border: 1px solid hsl(235, 18%, 26%);
+    outline: none;
+}
+.contentEmail::placeholder{
+    color: hsl(231, 7%, 60%);
+}
+.btn {
+    font-family: inherit;
+    font-size: .9rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+    background-color: hsl(234, 29%, 20%);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+.dismiss {
+    padding: 1.3rem;
+    font-size: 1rem;
+    background-color: hsl(235, 18%, 26%);
+}
+
+.btn:hover{
+    background: linear-gradient(90deg, #ff386d 11%, #ff6257 43%, #ff8957 97%);
+    box-shadow: -5px 10px 25px hsla(4, 100%, 67%, 0.4);
+}
+.successContent {
+    width: 100%;
+    min-height: 100%;
+    padding: 1.5rem;
+    justify-content: end;
+    display: none;
+    flex-direction: column;
+    gap: 12rem;
+    background-color: white;
+    
+}
+h2 {
+    font-size: 2.5rem;
+    color: hsl(235, 18%, 26%);
+    line-height: 1.1;
+}
+.successMsgBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+.successMsgBlock img {
+    width: 4rem;
+}
+.successMsgBlock p {
+    color: hsl(235, 18%, 26%);
+    line-height: 1.6;
+    font-weight: 400;
+}
+.successMsgBlock p span {
+    font-weight: 700;
+}
+.desktop{
+    display: none;
+}
+
+
+
+@media screen and (min-width:520px){
+    .successContent {
+        padding: 3rem 4rem;
+    }
+}
+
+@media screen and (min-width:768px){
+    body {
+        background-color: hsl(234, 29%, 20%);
+        padding: 1rem 0;
+    }
+    .container {
+        background-color: white;
+        max-width: 54.5rem;
+        width: 98%;
+        border-radius: 30px;
+        min-height: auto;
+        padding: 1.5rem;
+    }
+    .mainContent {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .image {
+        order: calc(1);
+    }
+    .contentDetails{
+        justify-content: center;
+        padding: 1.5rem 0;
+        width: 50%;
+        gap: 0.2;
+    }
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: flex;
+    }
+    .container.success{
+        width: 30rem;
+    }
+    .successContent{
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+    .successMsgBlock{
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width:843px){
+    .contentDetails{
+        justify-content: center;
+        padding: 3rem 0 3rem 2rem;
+        width: 50%;
+        gap: .5rem;
+    }
 }

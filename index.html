@@ -4,11 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/92fa8ead7f.js" crossorigin="anonymous"></script>
     <script defer src="index.js"></script>
     <title>Newsletter Sign-Up</title>
 </head>
 <body>
-    
+    <main class="container" id="container">
+        <section class="mainContent">
+            <div class="image">
+                <img src="images/illustration-sign-up-mobile.svg" alt="sign up illustration" class="mobile">
+                <img src="images/illustration-sign-up-desktop.svg" alt="sign up image" class="desktop">
+            </div>
+            <article class="contentDetails">
+                <h1>Stay updated!</h1>
+                <p>Join 60,000+ product managers receiving monthly updates on:</p>
+                <ul class="detailsList">
+                    <li>Product discovery and building what matters</li>
+                    <li>Measuring to ensure updates are a success</li>
+                    <li>And much more!</li>
+                </ul>
+                <form action="\" class="contentForm" id="contentForm">
+                   <div>
+                        <label for="email" class="label">Email address</label><span class="errorMsg">Valid email required</span>
+                   </div>
+                   <input type="text" id="email" class="contentEmail" placeholder="email@company.com">
+                   <button type="submit" class="btn">Subscribe to monthly newsletter</button>
+                </form>
+            </article>
+        </section>
+        <section class="successContent">
+            <div class="successMsgBlock">
+                <img src="images/icon-success.svg" alt="check icon">
+                <h2>Thanks for subscribing!</h2>
+                <p>A confirmation email has been sent to <span id="registeredEmail"></span>. Please open it and click the button inside to confirm your subscription.</p>
+            </div>
+            <button class="btn dismiss" id="resetBtn">Dismiss message</button>
+        </section>
+    </main>    
 </body>
 </html>
